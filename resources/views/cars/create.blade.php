@@ -16,7 +16,7 @@
         <label for="brand_id">Brand:</label><br>
         <select name="brand_id" id="brand_id" required>
             @foreach ($brands as $brand)
-                <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                <option value="{{ $brand->getId() }}">{{ $brand->getName() }}</option>
             @endforeach
         </select><br>
 

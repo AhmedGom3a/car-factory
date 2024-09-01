@@ -8,7 +8,11 @@
                 margin-bottom: 100px;
                 margin-top: 50px;
             }
+
         </style>
+
+        @yield('style')
+        
     </head>
     <body>
         <div class="container content">
