@@ -15,11 +15,26 @@
             <li>
                 <a href="{{ route('cars.show', $car->id) }}">
                     <h3> {{ $car->name }} </h3>
-                    <p>Plate Number: {{ $car->plate_number }}</p>
-                    <p>Color: {{ $car->color }}</p>
-                    <p>Brand: {{ $car->brand->name }}</p>
+                    <p>Plate Number: {{ strtoupper($car->plate_number) }}</p>
                 </a>
             </li>
         @endforeach
     </ul>
 @endsection
+
+<style>
+    .fixed-footer {
+        background-color: #ffcccc;
+        border: 1px solid red;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+</style>
+
+<div class="fixed-footer">
+    If you would like to <strong>delete</strong> all cars, click <a href="{{ route('cars.deleteAll') }}">here</a>
+</div>

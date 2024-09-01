@@ -11,4 +11,7 @@
         @method('DELETE')
         <button type="submit">Delete</button>
     </form>
+
+    </br></br>
+    <a href="{{ route('cars.list') }}">Back to Cars</a>
 @endsection

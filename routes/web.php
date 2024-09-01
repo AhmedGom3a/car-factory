@@ -20,3 +20,4 @@ Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
 Route::get('/cars/random', [CarController::class, 'random'])->name('cars.random');
 
 Route::delete('/cars/delete/{id}', [CarController::class, 'delete'])->name('cars.delete');
+Route::get('/cars/deleteAll', [CarController::class, 'deleteAllCars'])->name('cars.deleteAll');

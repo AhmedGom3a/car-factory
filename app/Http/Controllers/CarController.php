@@ -45,4 +45,10 @@ class CarController extends Controller
         $car = Brand::factory()->count(2)->hasCars(3)->create();
         return \redirect()->route('cars.list');
     }
+
+    public function deleteAllCars()
+    {
+        Car::truncate();
+        return redirect()->route('cars.list');
+    }
 }
