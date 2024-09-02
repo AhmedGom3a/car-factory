@@ -4,10 +4,9 @@ namespace App\Domain;
 
 class Brand
 {
-
     public function __construct(
-        private ?int $brandId = null,
-        private $name
+        private $name,
+        private ?int $brandId = null
     ) {
         //
     }

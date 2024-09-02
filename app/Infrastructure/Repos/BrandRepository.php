@@ -15,8 +15,8 @@ class BrandRepository
         }
 
         return new Brand(
-            $brand->id,
-            $brand->name
+            $brand->name,
+            $brand->id
         );
     }
 
@@ -28,8 +28,8 @@ class BrandRepository
         $brands = BrandModel::all();
         return $brands->map(function ($brand) {
             return new Brand(
-                $brand->id,
-                $brand->name
+                $brand->name,
+                $brand->id
             );
         })->all();
     }

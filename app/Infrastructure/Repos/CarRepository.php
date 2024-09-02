@@ -55,14 +55,14 @@ class CarRepository
     private function mapCarModelToCar(CarModel $car): Car
     {
         return new Car(
-            $car->id,
             $car->name,
             $car->color,
             $car->plate_number,
             new Brand(
-                $car->brand->id,
-                $car->brand->name
-            )
+                $car->brand->name,
+                $car->brand->id
+            ),
+            $car->id,
         );
     }
 }

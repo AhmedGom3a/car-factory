@@ -7,11 +7,11 @@ use App\Domain\Brand;
 class Car
 {
     public function __construct(
-        private ?int $carId = null,
         private string $name,
         private string $color,
         private string $plateNumber,
-        private Brand $brand
+        private Brand $brand,
+        private ?int $carId = null
     ) {
     }
 

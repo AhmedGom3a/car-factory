@@ -32,7 +32,6 @@ class CarService
         }
 
         $car = new Car(
-            carId: null,
             name: $name,
             color: $color,
             plateNumber: $plateNumber,
