@@ -6,6 +6,8 @@ use App\Domain\Brand;
 
 class Car
 {
+    private ?string $image = null;
+    
     public function __construct(
         private string $name,
         private string $color,
@@ -48,5 +50,15 @@ class Car
     public function getBrand(): Brand
     {
         return $this->brand;
+    }
+
+    public function setImage(string $image): void
+    {
+        $this->image = $image;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
     }
 }

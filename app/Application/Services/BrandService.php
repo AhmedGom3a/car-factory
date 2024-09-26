@@ -2,7 +2,6 @@
 
 namespace App\Application\Services;
 
-use App\Domain\Brand;
 use App\Infrastructure\Repos\BrandRepository;
 
 class BrandService

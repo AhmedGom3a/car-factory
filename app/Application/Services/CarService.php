@@ -14,14 +14,20 @@ class CarService
 
     public function __construct(
         protected BrandRepository $brandRepository,
-        protected CarRepository $carRepository
+        protected CarRepository $carRepository,
+        protected CarImageService $carImageService
     ) {
         //
     }
 
     public function getCarByIdWithBrand(int $id): ?Car
     {
-        return $this->carRepository->findCarByIdWithBrand($id);
+        $car = $this->carRepository->findCarByIdWithBrand($id);
+        if ($car) {
+            $car->setImage($this->carImageService->generateRandomCarImageUrl());
+        }
+
+        return $car;
     }
 
     public function createCar(string $name, string $color, string $plateNumber, int $brandId): Car
@@ -38,7 +44,10 @@ class CarService
             brand: $brand
         );
 
-        return $this->carRepository->store($car);
+        $car = $this->carRepository->store($car);
+        $car->setImage($this->carImageService->generateRandomCarImageUrl());
+
+        return $car;
     }
 
     public function createRandomCars(): void

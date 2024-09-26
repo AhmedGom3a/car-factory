@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Brand;
-use App\Models\Car;
-use App\Application\Services\BrandService;
-use App\Application\Services\CarService;
 use Illuminate\Http\Request;
+use App\Application\Services\CarService;
+use App\Application\Services\BrandService;
+use App\Application\Services\CarImageService;
 
 
 class CarController extends Controller
 {
     public function __construct(
         protected BrandService $brandService,
-        protected CarService $carService
+        protected CarService $carService,
+        protected CarImageService $carImageService
     ) {
         //
     }
@@ -43,7 +43,8 @@ class CarController extends Controller
     public function create()
     {
         $brands = $this->brandService->getAllBrands();
-        return view('cars.create', compact('brands'));
+        $image = $this->carImageService->generateRandomCarImageUrl();
+        return view('cars.create', compact('brands', 'image'));
     }
 
     public function store(Request $request)
